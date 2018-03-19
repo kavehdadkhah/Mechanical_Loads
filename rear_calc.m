@@ -7,10 +7,10 @@ N = acc(1) * loads *W * 9.81;
 Fb = acc(2) * loads *W * 9.81;
 Ft = acc(3) * loads *W * 9.81;
 
-Fs = ((Fb*rear_geo(6)) - (N*rear_geo(1))) / ((sin(rear_geo(9))*(rear_geo(1)-rear_geo(2)))+(cos(rear_geo(9))*rear_geo(3))); %Shock force
-Faby = Fs*cos(rear_geo(9)) + Fb; %Sum of A and B  in x
+Fs = ((-Fb*rear_geo(6)) - (N*rear_geo(1))) / ((sin(rear_geo(9))*(rear_geo(1)-rear_geo(2)))+(cos(rear_geo(9))*rear_geo(3))); %Shock force
+Faby = Fs*cos(rear_geo(9)) - Fb; %Sum of A and B  in x
 
-%Top Clevis
+%Top Shock Clevis
 Fcy = -1* Fs*cos(rear_geo(9)); %Clevis C x direction
 Fcz = Fs*sin(rear_geo(9)); %Clevis C y direction
 
