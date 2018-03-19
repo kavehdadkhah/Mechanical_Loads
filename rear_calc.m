@@ -11,7 +11,7 @@ Fs = ((-Fb*rear_geo(6)) - (N*rear_geo(1))) / ((sin(rear_geo(9))*(rear_geo(1)-rea
 Faby = Fs*cos(rear_geo(9)) - Fb; %Sum of A and B  in x
 
 %Top Shock Clevis
-Fcy = -1* Fs*cos(rear_geo(9)); %Clevis C x direction
+Fcy = Fs*cos(rear_geo(9)); %Clevis C x direction
 Fcz = Fs*sin(rear_geo(9)); %Clevis C y direction
 
 %Bottom Left Clevis
