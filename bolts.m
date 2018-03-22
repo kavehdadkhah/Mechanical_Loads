@@ -1,6 +1,6 @@
 function [ clevis_size ] = bolts( clevis_loads, rod_end_geo,rod, bolt_strenght)
-%UNTITLED3 Summary of this function goes here
-%   Detailed explanation goes here
+% FINDS MINIMUM WIDTH SIZE REQUIRED FOR CLEVISES
+
 clevis_size = [];
 width = 0;
 for i=1:size(clevis_loads,1)
@@ -10,9 +10,7 @@ for i=1:size(clevis_loads,1)
             width = (bolt_strenght*pi*(rod_end_geo(y,9)^2)/(8*2.5*force))+(rod_end_geo(y,8)/2);
         end
         clevis_size(1,i) = width; %inches
-    
     end
-      
 end    
 
 end

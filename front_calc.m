@@ -1,8 +1,5 @@
 function [ Clevis_Forces ] = front_calc( loads,front_geo, acc,W)
-%UNTITLED11 Summary of this function goes here
-%   Detailed explanation goes here
-
-%Output format = [x,y,z] where z is the bending force, sum of x and y are the axial
+% FRONT SUSPENSION LOAD CALCULATOR
 
 Clevis_Forces = zeros(5,3);
 N = acc(1) * loads *W * 9.81;

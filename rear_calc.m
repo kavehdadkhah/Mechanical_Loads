@@ -1,6 +1,5 @@
 function [ Clevis_force ] = rear_calc( loads,rear_geo, acc,W )
-%UNTITLED2 Summary of this function goes here
-%   Detailed explanation goes here
+% REAR SUSPENSION LOAD CALCULATOR
 
 Clevis_force = zeros(3,3);
 N = acc(1) * loads *W * 9.81;

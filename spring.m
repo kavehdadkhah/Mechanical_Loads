@@ -1,6 +1,5 @@
 function [ spring_rate ] = spring( deflection, weight, wheel_travel , spring_travel )
-%UNTITLED Summary of this function goes here
-%   Detailed explanation goes here
+% SPRING RATE (CONSTANT) CALCULATOR
 
 frequency = 188/(sqrt(deflection));
 

@@ -1,6 +1,5 @@
 function [ best_rod_end,sum ] = rod_end_2( clevis_loads, rod_end_geo, jam_nut )
-%UNTITLED Summary of this function goes here
-%   Detailed explanation goes here
+% FOR REAR SUSPENSION ROD ENDS
 best_rod_end = [];
 sum = 0;
 for i = 1:(size(clevis_loads,1))
