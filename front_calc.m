@@ -52,7 +52,7 @@ Fsz = Fs*sin(front_geo(15));
 
 Fhi = Fsz-Fbz;
 
-%Bottom Left Clevis
+%Bottom Right Clevis
 
 % DOUBLE WISHBONE: 
 % Fia = (((Fs*cos(front_geo(15))*front_geo(10))+(Fby*front_geo(12))-Fbx*front_geo(10)))/((front_geo(10)+front_geo(11))*cos(front_geo(17))); %Left clevis
@@ -65,7 +65,8 @@ Fix = Fia*sin(front_geo(17));
 Fiy = Fia*cos(front_geo(17));
 Fiz = (Fhi*front_geo(10))/(front_geo(10)+front_geo(11));
 
-%Bottom Right Clevis
+%Bottom Left Clevis
+
 % DOUBLE WISHBONE: 
 % Fha = (((Fs*cos(front_geo(15))*front_geo(11))-(Fbx*front_geo(11))-(Fby*front_geo(12))))/((front_geo(10)+front_geo(11))*cos(front_geo(16))); %Right clevis
 % Fhx = Fha*cos(front_geo(16));
@@ -80,8 +81,8 @@ Fhz = (Fhi*front_geo(11))/(front_geo(10)+front_geo(11));
 
 Clevis_Forces(1,1:3) = [Fex,Fey,0];
 Clevis_Forces(2,1:3) = [Ffx,Ffy,0];
-Clevis_Forces(3,1:3) = [Fix,Fiy,Fiz];
-Clevis_Forces(4,1:3) = [Fhx,Fhy,Fhz];
+Clevis_Forces(3,1:3) = [Fhx,Fhy,Fhz];
+Clevis_Forces(4,1:3) = [Fix,Fiy,Fiz];
 
 Clevis_Forces(5,1:3) = [Ftx,Fty,0];
 Clevis_Forces(6,1:3) = [Fbx,Fby,Fbz];
