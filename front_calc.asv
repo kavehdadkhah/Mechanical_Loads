@@ -6,6 +6,7 @@ N = acc(1) * loads *W * 9.81;
 Fb = acc(2) * loads *W * 9.81;
 Ft = acc(3) * loads *W * 9.81;
 
+
 %Top Rod Ends
 Ftx = ((Ft*front_geo(4))-(N*(front_geo(2)-front_geo(1))))/front_geo(3);
 Fty = (Fb*front_geo(4))/front_geo(3);
@@ -16,28 +17,22 @@ Fby = (Fb*(front_geo(3)+front_geo(4)))/front_geo(3);
 Fbz = N;
 
 %Top Left Clevis
-
 % DOUBLE WISHBONE: 
-% Fe = ((Ftx*front_geo(6))+(Fty*front_geo(7)))/(cos(front_geo(13))*(front_geo(5)+front_geo(6))); %Left clevis
+%Fe = ((Ftx*front_geo(6))+(Fty*front_geo(7)))/(cos(front_geo(13))*(front_geo(5)+front_geo(6))); %Left clevis
 % Fex = Fe*cos(front_geo(13));
 % Fey = Fe*sin(front_geo(13));
-
-% LEADING ARM: 
+% TRAILING ARM: 
 Fe = ((Ftx*front_geo(7))+(Fty*front_geo(6)))/(cos(front_geo(13))*(front_geo(5)+front_geo(6))); %Left clevis
-Fex = Fe*sin(front_geo(13));
-Fey = Fe*cos(front_geo(13));
+Fex = Fe*cos(front_geo(13));
+Fey = Fe*sin(front_geo(13));
 
 
 %Top Right Clevis
-% DOUBLE WISHBONE: 
-% Ff = ((Ftx*front_geo(5))-(Fty*front_geo(7)))/((cos(front_geo(14))*(front_geo(5)+front_geo(6)))); %Right clevis
-% Ffx = Ff*cos(front_geo(14));
-% Ffy = Ff*sin(front_geo(14));
-
-% LEADING ARM: 
+% DOUBLE WISHBONE: Ff = ((Ftx*front_geo(5))-(Fty*front_geo(7)))/((cos(front_geo(14))*(front_geo(5)+front_geo(6)))); %Right clevis
+% TRAILING ARM: 
 Ff = ((Ftx*front_geo(7))-(Fty*front_geo(5)))/((cos(front_geo(14))*(front_geo(5)+front_geo(6)))); %Right clevis
-Ffx = Ff*sin(front_geo(14));
-Ffy = Ff*cos(front_geo(14));
+Ffx = Ff*cos(front_geo(14));
+Ffy = Ff*sin(front_geo(14));
 
 
 %Spring 
@@ -54,27 +49,19 @@ Fhi = Fsz-Fbz;
 
 %Bottom Left Clevis
 
-% DOUBLE WISHBONE: 
-% Fia = (((Fs*cos(front_geo(15))*front_geo(10))+(Fby*front_geo(12))-Fbx*front_geo(10)))/((front_geo(10)+front_geo(11))*cos(front_geo(17))); %Left clevis
-% Fix = Fia*cos(front_geo(17));
-% Fiy = Fia*sin(front_geo(17));
-
-% LEADING ARM:
+% DOUBLE WISHBONE: Fia = (((Fs*cos(front_geo(15))*front_geo(10))+(Fby*front_geo(12))-Fbx*front_geo(10)))/((front_geo(10)+front_geo(11))*cos(front_geo(17))); %Left clevis
+% TRAILING ARM:
 Fia = (((Fs*cos(front_geo(15))*front_geo(10))+(Fby*front_geo(10))-Fbx*front_geo(12)))/((front_geo(10)+front_geo(11))*cos(front_geo(17))); %Left clevis
-Fix = Fia*sin(front_geo(17));
-Fiy = Fia*cos(front_geo(17));
+Fix = Fia*cos(front_geo(17));
+Fiy = Fia*sin(front_geo(17));
 Fiz = (Fhi*front_geo(10))/(front_geo(10)+front_geo(11));
 
 %Bottom Right Clevis
-% DOUBLE WISHBONE: 
-% Fha = (((Fs*cos(front_geo(15))*front_geo(11))-(Fbx*front_geo(11))-(Fby*front_geo(12))))/((front_geo(10)+front_geo(11))*cos(front_geo(16))); %Right clevis
-% Fhx = Fha*cos(front_geo(16));
-% Fhy = Fha*sin(front_geo(16));
-
-% LEADING ARM:
+% DOUBLE WISHBONE: Fha = (((Fs*cos(front_geo(15))*front_geo(11))-(Fbx*front_geo(11))-(Fby*front_geo(12))))/((front_geo(10)+front_geo(11))*cos(front_geo(16))); %Right clevis
+% TRAILING ARM:
 Fha = (((Fs*cos(front_geo(15))*front_geo(11))-(Fbx*front_geo(12))-(Fby*front_geo(11))))/((front_geo(10)+front_geo(11))*cos(front_geo(16))); %Right clevis
-Fhx = Fha*sin(front_geo(16));
-Fhy = Fha*cos(front_geo(16));
+Fhx = Fha*cos(front_geo(16));
+Fhy = Fha*sin(front_geo(16));
 Fhz = (Fhi*front_geo(11))/(front_geo(10)+front_geo(11));
 
 
