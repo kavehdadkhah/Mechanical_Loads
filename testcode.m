@@ -1,7 +1,7 @@
 % MAIN CODE
-
-[front_geo,txt,raw] = xlsread('numbers1.xlsx', 'Sheet1');
-[mass,txt,raw] = xlsread('numbers1.xlsx', 'Sheet5');
+[front_geo] = xlsread('numbers1.xlsx', 'Sheet1','B2:B18');
+[rear_geo] = xlsread('numbers1.xlsx','Sheet6','A1:A9');
+[mass] = xlsread('numbers1.xlsx', 'Sheet5');
 
 cg = cg2(mass); %x, y ,z cg
 wb = 2; %Wheel base
