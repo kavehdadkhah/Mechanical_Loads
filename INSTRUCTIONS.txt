@@ -1,0 +1,7 @@
+-Start from the "testcode". Here you can change the different parameters and call
+the other functions. For example, you can change the acceleration scenario from
+3-1-1 to something else. 
+
+-After running the testcode, you can call the variable you want, like FL. This will
+give you the loads at the front-left wheel. Or you can write them to an excel file.
+
