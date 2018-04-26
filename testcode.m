@@ -4,10 +4,10 @@
 [mass] = xlsread('numbers1.xlsx', 'Sheet5');
 
 cg = cg2(mass); %x, y ,z cg
-wb = 2; %Wheel base
-tw = 0.9; %Track width
+wb = 1.7; %Wheel base
+tw = 1.0; %Track width
 static_loads = wheel_loads(cg,wb,tw); %Front, Rear, Left, Right
-acc = [3,1,1]; %bump, brake, turn
+acc = [1,0,0]; %bump, brake, turn
 car_mass = sum(mass(:,1));
 
 cp = [0.35,0.8,0.372];
